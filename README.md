@@ -6,7 +6,7 @@
 </p>
 
 
-## Estudio de Caso: Análisis del uso compartido de bicicletas de la empresa Cyclistic en Chicago USA
+## Análisis del Uso Compartido de Bicicletas en Chicago, USA: Estudio de Caso de la Empresa Cyclistic
 **Analisis de datos usando R y RStudio.**
 *Capstone-Google Data Analytics professional Certificate* 
 
@@ -234,7 +234,7 @@ summary_bike_share_ride_length <- bike_share_data %>%
             min_lenght_time =  min(ride_length_min),median_length_min = median(ride_length_min) )
 
 ```
-![porcentaje de Usuarios](./figure/summary_tiempo_de_uso_por_usuario.png)
+![porcentaje de Usuarios](./figure/summary_tiempo_de_uso_por_usuario_min.png)
 
 Aquí se puede observar que los ciclistas casuales presentan un promedio de tiempo de uso superior al de los ciclistas miembros. Los valores máximos en el grupo casual son notablemente altos, lo cual puede deberse a casos atípicos o eventos excepcionales. De igual manera, se debe considerar la posibilidad de valores mínimos provocados por situaciones accidentales.
 
