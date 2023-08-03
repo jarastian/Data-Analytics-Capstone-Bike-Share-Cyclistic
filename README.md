@@ -3,6 +3,13 @@
 Caso Practico: Análisis del uso compartido de bicicletas ( Google Data Analytics professional Certificate) <br>
 Hago uso de R y RStudio para el Analisis de datos.
 
+## 📑 Contenido del proceso de Análisis
+* [Pregunta Empresarial](README.md#Preguntar)
+* [Preparación de los datos](README.md#Preparar)
+* [Procesamiento](README.md#Procesar)
+* [Análisis](README.md#Analizar)
+* [Visualización](README.md#Visualizar)
+* [Actuar](README.md#Actuar)
 
 ## Preguntar 
 
@@ -36,7 +43,7 @@ Cyclistic, es una empresa de bicicletas compartidas de Chicago. La directora de 
 * ¿En qué se diferencian los socios anuales y los ciclistas ocasionales con respecto al uso de las bicicletas de Cyclistic?  
 
 
-## Preparando los datos
+## Preparar
 
 Se usará *datos históricos* de los últimos 12 meses (Julio de 2022 a Junio del 2023),  Los datos ha sido proporcionados por *Motivate Internacional Inc, siendo datos públicos.* Los *datos personales*  de los usuarios son *anonimizados*.
 
@@ -103,7 +110,7 @@ for (df in bike_trips_list) {
 *Los datos son actuales*, ya que se han recopilado y analizado los viajes en bicicleta de los últimos doce meses, desde julio de 2022 hasta junio de 2023. Esto garantiza que el análisis refleje la situación actual y reciente de los patrones de uso de las bicicletas.
 
 
-## Procesando
+## Procesar
 
 Para comenzar la limpieza de datos, es necesario verificar tanto los nombres de las columnas como los formatos utilizados. Esto me permitirá fusionar la información en un solo dataframe y, de esta manera, facilitar tanto el proceso de limpieza como el análisis.
 
@@ -192,7 +199,7 @@ bike_share_data <- bike_share_data %>%
 
 
 
-## Analisis
+## Analizar
 
 
 *¿Cuál es el porcentaje actual de ciclistas ocasionales y miembros anuales en el total de usuarios de las bicicletas compartidas?*
@@ -296,11 +303,10 @@ En cuanto a la jornada, los ciclistas casuales presentan un tiempo de uso promed
 
 
 
-## Visualizacion
+## Visualizar
 
 
 **Visualizando del numero de viajes por dia por tipo de usuario y Tipo de Bicileta**
-![porcentaje de Usuarios](./figure/num_viajes_por_dia_usuario_tipo_cicla.png)
 
 ```{r}
 ggplot(data = bike_share_data) + 
@@ -310,18 +316,18 @@ ggplot(data = bike_share_data) +
   labs(title = "Numero de viajes por dia por tipo de usuario y Tipo de bicicleta", 
        x = "Día de la semana", y ="Número de viajes", fill = "Tipo de Bicicleta") 
 ```
-
+![porcentaje de Usuarios](./figure/num_viajes_por_dia_usuario_tipo_cicla.png)
 
 El análisis de datos muestra patrones interesantes en el uso de las bicicletas compartidas por parte de los clientes casuales y miembros. Se puede observar que:
 
-*Los días con el mayor número de viajes de clientes casuales son los sábados y domingos, mientras que los clientes miembros realizan más viajes los miércoles y jueves. Esta diferencia en los días de mayor uso sugiere que los clientes casuales tienden a utilizar las bicicletas compartidas más frecuentemente durante los fines de semana no laborables, posiblemente para actividades recreativas o turísticas, mientras que los clientes miembros las utilizan más para desplazamientos durante los días laborables.
+* Los días con el mayor número de viajes de clientes casuales son los sábados y domingos, mientras que los clientes miembros realizan más viajes los miércoles y jueves. Esta diferencia en los días de mayor uso sugiere que los clientes casuales tienden a utilizar las bicicletas compartidas más frecuentemente durante los fines de semana no laborables, posiblemente para actividades recreativas o turísticas, mientras que los clientes miembros las utilizan más para desplazamientos durante los días laborables.
 
-*Los clientes casuales muestran una preferencia por las bicicletas eléctricas en comparación con las bicicletas de estación y las clásicas. Por otro lado, los clientes miembros utilizan tanto las bicicletas clásicas como las eléctricas, pero no hacen uso de las bicicletas de estación. Esta diferencia en las preferencias puede estar relacionada con la mayor flexibilidad que ofrecen las bicicletas eléctricas para recorrer distancias más largas y facilitar el desplazamiento en terrenos difíciles.
+* Los clientes casuales muestran una preferencia por las bicicletas eléctricas en comparación con las bicicletas de estación y las clásicas. Por otro lado, los clientes miembros utilizan tanto las bicicletas clásicas como las eléctricas, pero no hacen uso de las bicicletas de estación. Esta diferencia en las preferencias puede estar relacionada con la mayor flexibilidad que ofrecen las bicicletas eléctricas para recorrer distancias más largas y facilitar el desplazamiento en terrenos difíciles.
 
-*La observación sobre el uso de las bicicletas de estación puede indicar que los clientes miembros prefieren la comodidad de poder estacionar cerca de su destino, lo cual es posible con las bicicletas clásicas y eléctricas que pueden ser dejadas en lugares permitidos. En cambio, las bicicletas de estación requerirían ser devueltas a una estación específica, lo que podría ser menos conveniente para algunos usuarios.
+* La observación sobre el uso de las bicicletas de estación puede indicar que los clientes miembros prefieren la comodidad de poder estacionar cerca de su destino, lo cual es posible con las bicicletas clásicas y eléctricas que pueden ser dejadas en lugares permitidos. En cambio, las bicicletas de estación requerirían ser devueltas a una estación específica, lo que podría ser menos conveniente para algunos usuarios.
 
 
-**Visualizando el numero de viajes por horario del día y Tipo de usuario **
+**Visualizando el numero de viajes por horario del día y Tipo de usuario**
 
 ```{r}
 ggplot(data = bike_share_data) + 
@@ -353,19 +359,19 @@ En general, podemos observar que aunque el porcentaje actual de ciclistas miembr
 
 *Ciclistas casuales:*
 
-*Se identifica un dato atípico entre los ciclistas casuales con una duración de viaje de aproximadamente 28 días (2500000 segundos). Esta duración extremadamente larga podría ser resultado de un error de registro o un viaje excepcionalmente largo, y es necesario investigar más a fondo este valor para determinar su validez.
+* Se identifica un dato atípico entre los ciclistas casuales con una duración de viaje de aproximadamente 28 días (2500000 segundos). Esta duración extremadamente larga podría ser resultado de un error de registro o un viaje excepcionalmente largo, y es necesario investigar más a fondo este valor para determinar su validez.
 
-*Existe otro grupo de datos con duraciones de viaje entre 12 días (1000000 segundos) y 24 días (2000000 segundos). Estas duraciones sugieren que algunos usuarios casuales utilizan las bicicletas compartidas para viajes de varios días, lo que podría estar relacionado con actividades turísticas o recreativas prolongadas.
+* Existe otro grupo de datos con duraciones de viaje entre 12 días (1000000 segundos) y 24 días (2000000 segundos). Estas duraciones sugieren que algunos usuarios casuales utilizan las bicicletas compartidas para viajes de varios días, lo que podría estar relacionado con actividades turísticas o recreativas prolongadas.
 
-*También se observa un grupo considerable de ciclistas casuales que alquilan bicicletas para trayectos de 6 días (500000 segundos) a 12 días. Esto indica que algunos usuarios casuales prefieren utilizar las bicicletas compartidas para viajes más extensos, pero no tan largos como el grupo anterior.
+* También se observa un grupo considerable de ciclistas casuales que alquilan bicicletas para trayectos de 6 días (500000 segundos) a 12 días. Esto indica que algunos usuarios casuales prefieren utilizar las bicicletas compartidas para viajes más extensos, pero no tan largos como el grupo anterior.
 
-*La mayoría de los puntos de datos están concentrados en duraciones de viaje de menos de 6 días (500000 segundos). Esto sugiere que la mayoría de los usuarios casuales realizan trayectos más cortos y rápidos, lo que respalda la idea de que utilizan las bicicletas compartidas para actividades de ocio y desplazamientos dentro de la ciudad.
+* La mayoría de los puntos de datos están concentrados en duraciones de viaje de menos de 6 días (500000 segundos). Esto sugiere que la mayoría de los usuarios casuales realizan trayectos más cortos y rápidos, lo que respalda la idea de que utilizan las bicicletas compartidas para actividades de ocio y desplazamientos dentro de la ciudad.
 
 *Ciclistas miembros:*
 
-*En contraste, la duración de viaje para los ciclistas miembros es menor, con un límite inferior de 3 días (250000 segundos). Esto indica que los miembros utilizan las bicicletas compartidas principalmente para viajes más cortos y puntuales, como desplazamientos al trabajo o actividades cotidianas.
+* En contraste, la duración de viaje para los ciclistas miembros es menor, con un límite inferior de 3 días (250000 segundos). Esto indica que los miembros utilizan las bicicletas compartidas principalmente para viajes más cortos y puntuales, como desplazamientos al trabajo o actividades cotidianas.
 
-*Se destaca que la duración de viaje para los ciclistas miembros está concentrada principalmente en un solo día. Esto respalda la idea de que los miembros utilizan las bicicletas compartidas para trayectos diarios y se benefician de la conveniencia y eficiencia del servicio para sus desplazamientos.
+* Se destaca que la duración de viaje para los ciclistas miembros está concentrada principalmente en un solo día. Esto respalda la idea de que los miembros utilizan las bicicletas compartidas para trayectos diarios y se benefician de la conveniencia y eficiencia del servicio para sus desplazamientos.
 
 
 **Visualizacion del Tiempo promedio de uso por dia por tipo de usuario:**
@@ -385,7 +391,7 @@ ggplot(data = summary_bike_share_avg_time_day) +
 
 La visualización muestra claramente que los ciclistas casuales tienen un mayor tiempo promedio de uso los domingos, sábados, lunes y viernes. Por otro lado, los ciclistas miembros tienen un mayor tiempo promedio de uso los días sábados, domingos y viernes.
 
-Este análisis nos permite inferir que los ciclistas casuales tienden a utilizar las bicicletas compartidas durante los fines de semana y al inicio de la semana laboral para realizar trayectos más largos y extensos. Esto puede indicar que los usuarios casuales utilizan las bicicletas para actividades recreativas, turísticas o desplazamientos más largos durante sus días libres y los días laborales iniciales.
+Este análisis nos permite inferir que los ciclistas casuales tienden a utilizar las bicicletas compartidas durante los fines de semana y al inicio de la semana laboral para realizar trayectos más largos y extensos.
 
 En el caso de los ciclistas miembros, también se observa una tendencia similar a los fines de semana y los días laborales previos al fin de semana. Es posible que los miembros también utilicen las bicicletas compartidas para actividades de ocio o recreación durante sus días de descanso.
 
@@ -394,18 +400,24 @@ En el caso de los ciclistas miembros, también se observa una tendencia similar 
 
 ### Descubrimientos Claves
 
-*El análisis de datos realizado ha proporcionado información valiosa sobre las diferencias en el uso de las bicicletas compartidas entre los ciclistas ocasionales y los miembros anuales de Cyclistic. Se ha identificado que los ciclistas casuales tienden a utilizar el servicio principalmente para actividades de ocio y desplazamientos más largos, mientras que los miembros realizan un uso más regular y puntual para sus desplazamientos diarios.
+*Distribución de Usuarios:* Durante el período analizado, aproximadamente el 39% de los usuarios son ciclistas casuales (usuarios ocasionales) y el 61% son miembros anuales. Esto indica que la mayoría de los usuarios son miembros recurrentes, lo que representa una oportunidad para Cyclistic de aumentar la base de miembros anuales.
 
-*Los ciclistas ocasionales prefieren más las bicicletas eléctricas, por encima de las clásicas y las de estación o Docker bikes en menor medida, mientras que los ciclistas con membresía anual tiene preferencias tanto de las bicicletas eléctricas como las clásicas.
+*Duración Promedio de Viajes:* Los ciclistas casuales tienden a realizar viajes más largos en promedio, con una duración media de aproximadamente 28 minutos. Por otro lado, los miembros anuales realizan viajes más cortos en promedio, con una duración media de aproximadamente 12 minutos. Esta diferencia sugiere que los ciclistas ocasionales utilizan el servicio principalmente para actividades de ocio o desplazamientos más largos, mientras que los miembros realizan trayectos más cortos y frecuentes, posiblemente como parte de su rutina diaria.
 
-*Las recomendaciones propuestas, como la promoción de membresías anuales durante los fines de semana, programas de fidelización para ciclistas ocasionales y la mejora de la experiencia para usuarios miembros, tienen como objetivo convertir a los ciclistas ocasionales en miembros anuales y maximizar la cantidad de membresías anuales para garantizar el éxito futuro de Cyclistic.
+*Distribución Semanal de Uso:* Los ciclistas casuales tienden a utilizar más el servicio durante los fines de semana (sábado y domingo), con un pico en el uso los sábados. Por otro lado, los miembros anuales utilizan más el servicio durante los días laborales (de lunes a viernes), con un pico en el uso los jueves. Esta diferencia en la distribución semanal de uso puede estar relacionada con los diferentes propósitos de uso de los dos grupos de usuarios: los ciclistas casuales lo utilizan más para actividades de ocio durante los fines de semana, mientras que los miembros lo utilizan más para desplazamientos diarios durante los días laborales.
 
-*La implementación de estas recomendaciones, respaldadas por datos y análisis sólidos, puede ayudar a Cyclistic a alcanzar sus objetivos de negocio y consolidarse como una empresa líder en el mercado de bicicletas compartidas en Chicago.
+*Distribución Diaria de Uso:* Los ciclistas casuales muestran un patrón de uso más uniforme durante el día, con un ligero aumento en el uso durante la tarde y la noche. Por otro lado, los miembros anuales tienen un uso más pronunciado durante las horas pico de la mañana y la tarde, con un descenso en el uso durante la noche. Esto sugiere que los miembros utilizan las bicicletas compartidas para sus desplazamientos diarios, mientras que los ciclistas casuales las utilizan de manera más dispersa a lo largo del día, posiblemente para actividades recreativas.
+
+*Uso por Franja Horaria:* Analizando el tiempo promedio de uso por franja horaria, se observa que tanto los ciclistas casuales como los miembros anuales utilizan más las bicicletas compartidas durante la madrugada y la tarde. Los ciclistas casuales presentan un mayor tiempo promedio de uso en la madrugada, seguida de la tarde y la noche. Por otro lado, los miembros tienen un mayor tiempo promedio de uso en la noche, seguida de la madrugada y la mañana. Esto puede indicar que los ciclistas casuales tienden a utilizar las bicicletas principalmente durante las primeras horas del día y durante la tarde y noche, posiblemente para actividades de ocio o desplazamientos más largos. Mientras que los miembros hacen un mayor uso de las bicicletas compartidas durante la noche y las primeras horas del día, posiblemente para sus trayectos diarios y actividades cotidianas.
+
+*Preferencia de Cicla:* los ciclistas ocasionales muestran una clara preferencia por las bicicletas eléctricas, seguidas por las bicicletas clásicas, mientras que muestran un uso más bajo de las bicicletas de estación. Por otro lado, los ciclistas miembros muestran una preferencia diversa, utilizando tanto bicicletas eléctricas como las de tipo clásico. 
 
 ### Recomendaciones
 
-* Recomendacion 1
-* Recomendación 2
-* Recomendacion 3
+* *Promociones Especiales para Ciclistas Ocasionales*: Cyclistic puede ofrecer promociones y descuentos exclusivos a los ciclistas ocasionales durante los fines de semana. Por ejemplo, podrían ofrecer membresías anuales con una tarifa reducida o con beneficios adicionales, como minutos de uso gratuito cada mes. Esta estrategia apunta a incentivar a los ciclistas ocasionales a comprometerse a largo plazo y disfrutar de los beneficios de ser miembros anuales.
+
+* *Programa de Fidelización:* Implementar un programa de fidelización que recompense a los ciclistas ocasionales por convertirse en miembros anuales y por utilizar el servicio con frecuencia. Por ejemplo, Cyclistic podría ofrecer puntos de recompensa por cada viaje realizado como ciclista ocasional y permitirles canjear esos puntos por descuentos en la membresía anual o en viajes futuros.
+
+* *Experiencia del Usuario Mejorada:* Garantizar que la experiencia del usuario para los miembros anuales sea excepcional. Cyclistic debe asegurarse de que las bicicletas estén en buen estado, bien mantenidas y lo más importante según los datos son la mejora de la distribución de las ubicaciones de las estaciones, ya que las bicicletas de estación son poco utilizadas, esto se puede mejorar haciendo una mejor distribución en la ciudad, muy convenientes para los usuarios.
 
   
