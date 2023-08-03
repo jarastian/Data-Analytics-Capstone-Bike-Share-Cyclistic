@@ -1,9 +1,16 @@
 # Data-Analytics-Capstone-Bike-Share-Cyclistic
-*![people_riding_a_bike](./images/bike.jpg)*
-Caso Practico: Análisis del uso compartido de bicicletas ( Google Data Analytics professional Certificate) <br>
-Hago uso de R y RStudio para el Analisis de datos.
 
-## 📑 Contenido del proceso de Análisis
+
+<p align="center">
+  <img src="./figure/mean_imagen.png" alt="mean_imagen">
+</p>
+
+
+## Estudio de Caso: Análisis del uso compartido de bicicletas de la empresa Cyclistic en Chicago USA
+**Analisis de datos usando R y RStudio.**
+*Capstone-Google Data Analytics professional Certificate* 
+
+## 📑 Contenido del proceso de Análisis 
 * [Pregunta Empresarial](README.md#Preguntar)
 * [Preparación de los datos](README.md#Preparar)
 * [Procesamiento](README.md#Procesar)
@@ -45,7 +52,7 @@ Cyclistic, es una empresa de bicicletas compartidas de Chicago. La directora de 
 
 ## Preparar
 
-Se usará *datos históricos* de los últimos 12 meses (Julio de 2022 a Junio del 2023),  Los datos ha sido proporcionados por *Motivate Internacional Inc, siendo datos públicos.* Los *datos personales*  de los usuarios son *anonimizados*.
+Se selecciona *datos históricos* de los últimos 12 meses (Julio de 2022 a Junio del 2023),los datos ha sido proporcionados por *Motivate Internacional Inc, siendo datos públicos.* Los *datos personales*  de los usuarios son *anonimizados*.
 
 ```{r Importando datos}
 
@@ -65,7 +72,7 @@ bike_trips_2023_06_df <- read_csv("202306-divvy-tripdata.csv")
 
 ```
 
-Creo una lista de los dataframe para facilitar la aplicación de las funciones de verificación correspondientes.
+Creo una lista de los dataframe para facilitar la aplicación de las funciones de verificación.
 
 ```{r}
 # Lista con los data frames
@@ -131,7 +138,7 @@ for (df in bike_trips_list) {
 ```{r convirte en un Big Dataframe}
 all_bike_trips <- bind_rows(bike_trips_list)
 ```
-Se obtiene un solo dataframe , con 5,778,870 registros 
+Se obtiene un solo dataframe de 5,778,870 registros 
 
 *Seleccionando columnas de interés*
 
@@ -149,7 +156,7 @@ na_start_station_name <- bike_trips_df %>%
 
 ```
 
-Aunque hay valores nulos  en las cuatro columnas no afecta en análisis, por eso los conservo para seguir con el análisis
+Aunque hay valores nulos  en las cuatro columnas no afecta en análisis,los conservo.
 
 
 *Eliminado valores duplicados en resgistros y atributos*
@@ -183,7 +190,7 @@ negative_ride_length_df <-
 ```
 Han aparecido valores negativos que no cumplen con la validación
 
-Creo un nuevo df con el filtro aplicado, llamado bike_share_data, este sera el df para el análisis.
+Creo un nuevo df con el filtro aplicado, quitando los valores negativos, llamado bike_share_data, este sera el df para el análisis.
 ```{r}
 bike_share_data <- all_bike_trips_df %>%
   filter(ride_length_sec > 0)
@@ -224,7 +231,7 @@ Sacar la media, el máximo y el min tiempo de uso por los ciclistas miembros y l
 summary_bike_share_ride_length <- bike_share_data %>%
   group_by(member_casual) %>%
   summarize(avg_length_time = mean(ride_length_min), max_length_time = max(ride_length_min),
-            min_lenght_time =  min(ride_length_min),median_length_sec = median(ride_length_min) )
+            min_lenght_time =  min(ride_length_min),median_length_min = median(ride_length_min) )
 
 ```
 ![porcentaje de Usuarios](./figure/summary_tiempo_de_uso_por_usuario.png)
