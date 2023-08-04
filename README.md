@@ -11,7 +11,7 @@
 *Capstone-Google Data Analytics professional Certificate* 
 
 ## 📑 Contenido del proceso de Análisis 
-* [Pregunta Empresarial](README.md#Preguntar)
+* [Pregunta Empresarial](#Preguntar)
 * [Preparación de los datos](README.md#Preparar)
 * [Procesamiento](README.md#Procesar)
 * [Análisis](README.md#Analizar)
