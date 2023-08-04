@@ -11,12 +11,12 @@
 *Capstone-Google Data Analytics professional Certificate* 
 
 ## 📑 Contenido del proceso de Análisis 
-* [Pregunta Empresarial](#Preguntar)
-* [Preparación de los datos](#Preparar)
-* [Procesamiento](#Procesar)
-* [Análisis](#Analizar)
-* [Visualización](#Visualizar)
-* [Actuar](#Actuar)
+* [Pregunta Empresarial](#preguntar)
+* [Preparación de los datos](#preparar)
+* [Procesamiento](#procesar)
+* [Análisis](#analizar)
+* [Visualización](#visualizar)
+* [Actuar](#actuar)
 
 ## Preguntar 
 
