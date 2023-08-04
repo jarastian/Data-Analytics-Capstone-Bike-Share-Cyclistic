@@ -12,11 +12,11 @@
 
 ## 📑 Contenido del proceso de Análisis 
 * [Pregunta Empresarial](#Preguntar)
-* [Preparación de los datos](README.md#Preparar)
-* [Procesamiento](README.md#Procesar)
-* [Análisis](README.md#Analizar)
-* [Visualización](README.md#Visualizar)
-* [Actuar](README.md#Actuar)
+* [Preparación de los datos](#Preparar)
+* [Procesamiento](#Procesar)
+* [Análisis](#Analizar)
+* [Visualización](#Visualizar)
+* [Actuar](#Actuar)
 
 ## Preguntar 
 
