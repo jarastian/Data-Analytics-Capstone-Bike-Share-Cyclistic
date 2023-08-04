@@ -405,6 +405,8 @@ En el caso de los ciclistas miembros, también se observa una tendencia similar 
 
 ## Actuar
 
+### [Ver Presentación para Stakeholders](https://docs.google.com/presentation/d/e/2PACX-1vSHBCfGwQxqWVpiEbJrmH6vPDkjFOFGM08taz229P9tt3hnxiOq_heLx-p6hF2EcV2hxIzgEZxF8rU3/pub?start=false&loop=false&delayms=3000)
+
 ### Descubrimientos Claves
 
 *Distribución de Usuarios:* Durante el período analizado, aproximadamente el 39% de los usuarios son ciclistas casuales (usuarios ocasionales) y el 61% son miembros anuales. Esto indica que la mayoría de los usuarios son miembros recurrentes, lo que representa una oportunidad para Cyclistic de aumentar la base de miembros anuales.
